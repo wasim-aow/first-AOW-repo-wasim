@@ -119,7 +119,7 @@ export default function LetterCarousel() {
                     <button
                         key={index}
                         onClick={() => setCurrentSlide(index)}
-                        className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentSlide ? "bg-[#f73e5d] w-8" : "bg-white/70"
+                        className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentSlide ? "bg-[#f73e5d] w-8" : "bg-[#FFE100]"
                             }`}
                         aria-label={`Go to slide ${index + 1}`}
                     />

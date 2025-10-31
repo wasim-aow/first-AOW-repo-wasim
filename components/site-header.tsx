@@ -16,13 +16,13 @@ export default function SiteHeader() {
 
   return (
     <div className="w-full fixed top-0 left-0 z-50">
-      <nav className="flex flex-col w-full md:w-4/5 lg:w-3/5 xl:w-1/2 mx-auto bg-[hsl(212,48%,70%)] text-white rounded-b-3xl">
+      <nav className="flex flex-col w-full md:w-4/5 lg:w-3/5 xl:w-1/2 mx-auto bg-[#AE75DA] text-white rounded-b-3xl backdrop-blur-md">
         <div className="flex items-center px-4 py-2">
           {/* Logo */}
           <Link
             href="/"
             className={`md:hidden relative group py-4 px-2 text-sm lg:text-base transition-all ${
-              pathname === "/" ? "text-yellow-400 font-semibold" : "text-white"
+              pathname === "/" ? "text-[#FF9B00] font-semibold" : "text-white"
             }`}
           >
             <div className="relative flex items-center">
