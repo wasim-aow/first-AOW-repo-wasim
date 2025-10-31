@@ -239,7 +239,7 @@ export default function EmployerCandidateList() {
                   </div>
                 </div>
                 <button className="bg-[#00bcd4] text-white px-4 py-2 rounded-lg hover:bg-[#00a5bb]">
-                  View Report
+                  <a href="dummy/dummy.pdf" download>View Report</a>
                 </button>
               </div>
             </div>

@@ -2,9 +2,17 @@
 
 import { useState } from "react";
 import { Info, Calendar, Clock } from "lucide-react";
-
+import Swal from "sweetalert2";
 export default function ScheduleAssessment() {
   const [selectedCompany, setSelectedCompany] = useState<string>("microsoft");
+  function handleSubmit(){
+    Swal.fire({
+      title: "✅ Thank You !",
+      text: `Your assessment for ${selectedCompany} has been successfully scheduled.`,
+      icon: "success",
+      confirmButtonColor: "#2563eb", // blue
+    });
+  }
 
   return (
     <div className="text-white">
@@ -267,7 +275,9 @@ export default function ScheduleAssessment() {
 
         {/* Submit Button */}
         <div className="flex justify-center mt-8">
-          <button className="px-20 py-2 rounded bg-gradient-to-r from-[#4ECDC4] to-[#2d8a84] text-white hover:opacity-90">
+          <button className="px-20 py-2 rounded bg-gradient-to-r from-[#4ECDC4] to-[#2d8a84] text-white hover:opacity-90"
+          onClick={handleSubmit}
+          >
             Submit
           </button>
         </div>

@@ -67,9 +67,9 @@ export default function BlogPage() {
                     />
                   </div>
                   <h3 className="text-lg font-bold mb-1">{post.title}</h3>
-                  <p className="text-sm text-[#00418d] font-medium">
+                  <a href="/dummy/dummpy.pdf" download ><p className="text-sm text-[#00418d] font-medium">
                     {post.subtitle}
-                  </p>
+                  </p></a>
                 </div>
               ))}
             </div>
