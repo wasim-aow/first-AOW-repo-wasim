@@ -32,7 +32,7 @@ export default function BlogPage() {
       {/* Hero Section */}
       <section className="w-full bg-white py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
+          <div className="mt-16">
             <h2 className="text-3xl font-bold text-center mb-4">
               Mastering Knowledge & Growth
             </h2>
@@ -53,9 +53,10 @@ export default function BlogPage() {
               {blogPosts.map((post, index) => (
                 <div
                   key={index}
-                  className="flex flex-col group cursor-pointer"
+                  className="flex flex-col group cursor-pointer md:p-[70px] p-[30px]"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
+                  
                 >
                   <div className="relative mb-4 overflow-hidden">
                     <Image
@@ -63,7 +64,7 @@ export default function BlogPage() {
                       alt={post.title}
                       width={380}
                       height={240}
-                      className="w-full h-auto object-cover"
+                      className="w-full h-auto object-cover rounded-lg"
                     />
                   </div>
                   <h3 className="text-lg font-bold mb-1">{post.title}</h3>
@@ -88,14 +89,14 @@ export default function BlogPage() {
           {/* Secondary Blog Posts */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Blog Post 4 */}
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full p-[30px] md:p-[50px] ">
               <div className="relative h-60 mb-4">
                 <Image
                   src="/images/blogpage/4.png"
                   alt="Tech skills"
                   width={580}
                   height={240}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-bold mb-2">
@@ -107,14 +108,14 @@ export default function BlogPage() {
             </div>
 
             {/* Blog Post 5 */}
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full p-[30px] md:p-[50px] rounded-lg">
               <div className="relative h-60 mb-4">
                 <Image
                   src="/images/blogpage/5.png"
                   alt="Learning motivation"
                   width={580}
                   height={240}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-bold mb-2">

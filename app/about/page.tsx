@@ -119,7 +119,7 @@ export default function AboutPage() {
             <section className="w-full bg-white py-12">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row gap-8 items-center">
-                        <div className="w-full md:w-1/2">
+                        <div className="w-full md:w-1/2 px-5">
                             <h2 className="text-3xl md:text-4xl font-bold text-[#00418d] mb-6">
                                 Who We Are ?
                             </h2>
@@ -211,7 +211,7 @@ export default function AboutPage() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="relative flex justify-center items-center">
                         <video
-                            className="w-[50%] h-auto rounded-lg"
+                            className="md:w-[50%] h-auto rounded-lg w-fit"
                             controls
                             preload="none"
                             poster="/images/aboutpage/about_video.png"
