@@ -16,7 +16,7 @@ export default function SiteHeader() {
 
   return (
     <div className="w-full fixed top-0 left-0 z-50">
-      <nav className="flex flex-col w-full md:w-4/5 lg:w-3/5 xl:w-1/2 mx-auto bg-[#335f92] text-white rounded-b-3xl">
+      <nav className="flex flex-col w-full md:w-4/5 lg:w-3/5 xl:w-1/2 mx-auto bg-[hsl(212,48%,70%)] text-white rounded-b-3xl">
         <div className="flex items-center px-4 py-2">
           {/* Logo */}
           <Link
@@ -28,7 +28,7 @@ export default function SiteHeader() {
             <div className="relative flex items-center">
               <div className="w-auto h-10 flex items-center justify-start overflow">
                 <Image
-                  src="/logos/skillLogo.svg"
+                  src="/logos/skillLogoT.png"
                   alt="SkillKwiz Logo"
                   width={100}
                   height={30}
@@ -65,7 +65,7 @@ export default function SiteHeader() {
               <div className="relative flex items-center">
                 <div className="w-auto h-10 flex items-center justify-start overflow-hidden">
                   <Image
-                    src="/logos/skillLogo.svg"
+                    src="/logos/skillLogoT.png"
                     alt="SkillKwiz Logo"
                     width={100}
                     height={30}
