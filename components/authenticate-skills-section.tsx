@@ -1,97 +1,100 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { motion } from 'framer-motion'
-export default function AuthenticateSkillsSection() {
-    return (
-        <section className="py-16 bg-white">
-            <div className="max-w-6xl mx-auto px-6">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                    {/* Left side stacked images */}
-                    <div className="relative w-full md:w-1/3 h-[400px] md:h-[500px]">
-                        <div className="absolute top-0 left-0 w-[80%] h-[80%] transform -rotate-12 hover:-rotate-6 transition-transform duration-300 z-10">
-                            <motion.div initial={{ rotate: -12, opacity: 0, y: 50 }}
-                                whileInView={{ rotate: -6, opacity: 1, y: 0 }}
-                                transition={{ duration: 0.9, type: "spring" , delay: 0.5 }}
-                                viewport={{ once: true }}
-                                className="absolute top-0 left-0 w-[80%] h-[80%] z-10">
-                                <Image
-                                    src="/images/homepage/skills_1.png"
-                                    alt="Professional working at night"
-                                    width={350}
-                                    height={500}
-                                    className="rounded-lg object-cover w-full h-full"
-                                />
-                            </motion.div>
-                        </div>
-                        <div className="absolute bottom-0 left-[10%] w-[80%] h-[80%] transform -rotate-6 hover:rotate-0 transition-transform duration-300">
-                            <motion.div initial={{ rotate: -12, opacity: 0, y: 50 }}
-                            whileInView={{ rotate: -6, opacity: 1, y: 0 }}
-                                transition={{ duration: 0.9, type: "spring",delay: 0.5 }}
-                                viewport={{ once: true }}
-                                className="absolute top-0 left-0 w-[80%] h-[80%] z-10">
-                                <Image
-                                src="/images/homepage/skills_2.png"
-                                alt="Professional in tech environment"
-                                width={350}
-                                height={500}
-                                className="rounded-lg object-cover w-full h-full"
-                                />
-                            </motion.div>
-                            
-                        </div>
-                    </div>
 
-                    {/* Center content */}
-                    <div className="w-full md:w-1/3 text-center my-8 md:my-0 z-20">
-                        <h2 className="text-3xl font-bold text-[#00418d] mb-4">
-                            Authenticate Skills,
-                            <br />
-                            Simplify Hiring
-                        </h2>
-                        <p className="text-gray-700">
-                            SkillKwiz ensures professionals are evaluated accurately in their
-                            chosen fields. Our secure testing centers provide authenticated
-                            skill assessments, giving you instant access to verified
-                            reports—eliminating the need for lengthy technical interviews.
-                        </p>
-                    </div>
+export default function SkillShowcase() {
+  const [leftIndex, setLeftIndex] = useState(0);
+  const [rightIndex, setRightIndex] = useState(0);
 
-                    {/* Right side stacked images */}
-                    <div className="relative w-full md:w-1/3 h-[400px] md:h-[500px]">
-                        <div className="absolute top-0 right-0 w-[80%] h-[80%] transform rotate-9 hover:rotate-6 transition-transform duration-300 z-10">
-                            <motion.div initial={{ rotate: 9, opacity: 0, y: 50 }}
-                                whileInView={{ rotate: -6, opacity: 1, y: 0 }}
-                                transition={{ duration: 0.9, type: "spring" , delay: 0.5 }}
-                                viewport={{ once: true }}
-                                className="absolute top-0 left-0 w-[80%] h-[80%] z-10" >
-                                <Image
-                                src="/images/homepage/skills_3.png"
-                                alt="Professional at workstation"
-                                width={350}
-                                height={500}
-                                className="rounded-lg object-cover w-full h-full"
-                                />
-                            </motion.div>
-                            
-                        </div>
-                        <div className="absolute bottom-0 right-[10%] w-[80%] h-[80%] transform rotate-6 hover:rotate-0 transition-transform duration-300">
-                            <motion.div initial={{ rotate: 9, opacity: 0, y: 50 }}
-                                whileInView={{ rotate: -6, opacity: 1, y: 0 }}
-                                transition={{ duration: 0.9, type: "spring" , delay: 0.5 }}
-                                viewport={{ once: true }}
-                                className="absolute top-0 left-0 w-[80%] h-[80%] z-10">
-                                <Image
-                                src="/images/homepage/skills_4.png"
-                                alt="Business professional looking at digital interface"
-                                width={350}
-                                height={500}
-                                className="rounded-lg object-cover w-full h-full"
-                                />
-                            </motion.div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  const leftImages = [
+    "/images/homepage/skills_1.png",
+    "/images/homepage/skills_2.png",
+  ];
+  const rightImages = [
+    "/images/homepage/skills_3.png",
+    "/images/homepage/skills_4.png",
+  ];
+
+  // Left carousel auto-slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLeftIndex((prev) => (prev + 1) % leftImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Right carousel auto-slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRightIndex((prev) => (prev + 1) % rightImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+        {/* Left animated image */}
+        <div className="relative w-full md:w-1/3 flex justify-center items-center h-[400px] md:h-[500px] overflow-hidden rounded-xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={leftImages[leftIndex]}
+              initial={{ opacity: 0, x: -40, rotate: -4 }}
+              animate={{ opacity: 1, x: 0, rotate: 0 }}
+              exit={{ opacity: 0, x: 40, rotate: 4 }}
+              transition={{ duration: 1 }}
+              className="absolute w-[80%] h-[80%]"
+            >
+              <Image
+                src={leftImages[leftIndex]}
+                alt="Left showcase image"
+                width={400}
+                height={500}
+                className="rounded-lg shadow-lg object-cover w-full h-full"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Center content */}
+        <div className="w-full md:w-1/3 text-center px-2">
+          <h2 className="md:text-3xl text-2xl font-bold text-[#093fb4] mb-4">
+            Authenticate Skills,
+            <br />
+            Simplify Hiring
+          </h2>
+          <p className="text-gray-700 text-[17px] md:text-[21px] tracking-wide">
+            SkillKwiz ensures professionals are evaluated accurately in their
+            chosen fields. Our secure testing centers provide authenticated skill
+            assessments, giving you instant access to verified reports—eliminating
+            the need for lengthy technical interviews.
+          </p>
+        </div>
+
+        {/* Right animated image */}
+        <div className="relative w-full md:w-1/3 flex justify-center items-center h-[400px] md:h-[500px] overflow-hidden rounded-xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={rightImages[rightIndex]}
+              initial={{ opacity: 0, x: 40, rotate: 4 }}
+              animate={{ opacity: 1, x: 0, rotate: 0 }}
+              exit={{ opacity: 0, x: -40, rotate: -4 }}
+              transition={{ duration: 1 }}
+              className="absolute w-[80%] h-[80%]"
+            >
+              <Image
+                src={rightImages[rightIndex]}
+                alt="Right showcase image"
+                width={400}
+                height={500}
+                className="rounded-lg shadow-lg object-cover w-full h-full"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
 }

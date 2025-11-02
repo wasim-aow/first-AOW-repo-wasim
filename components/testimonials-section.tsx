@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -56,9 +56,9 @@ export default function TestimonialsSection() {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
 
   return (
-    <section className="py-16 bg-white relative overflow-hidden">
+    <section className="py-16 bg-white relative overflow-hidden pb-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#00418d] mb-12">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-[#093fb4] mb-12">
           What Our Clients Say
         </h2>
 

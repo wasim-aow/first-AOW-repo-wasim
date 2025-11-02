@@ -52,7 +52,7 @@ export default function HomePage() {
         {/* Hero / Video */}
 
         {/* Call Center Image overlapping - keep predictable positioning */}
-        <div className="relative top-0 mx-[5%]" style={{ zIndex: 3 }}>
+        <div className="relative top-0 " style={{ zIndex: 3 }}>
           <div className="">
             <LetterCarousel />
           </div>

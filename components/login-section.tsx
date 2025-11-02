@@ -9,7 +9,7 @@ export default function LoginSection() {
                     <div className="w-full md:w-1/2 p-8 relative">
                         <div className="flex flex-col h-full">
                             <div className="text-center mb-6">
-                                <h2 className="text-4xl font-bold">
+                                <h2 className="text-2xl md:text-4xl font-bold">
                                     <span className="text-[#f73e5d]">SKILL</span>
                                     <br />
                                     <span className="text-[#00a8e8]">ASSESSMENT</span>
@@ -64,7 +64,7 @@ export default function LoginSection() {
                     {/* Right side - Login Form */}
                     <div className="w-full md:w-1/2 bg-[#00418d] p-8 flex items-center">
                         <div className="w-full">
-                            <h2 className="text-xl font-bold text-white mb-6">Sign in to Skill Kwiz</h2>
+                            <h2 className="md:text-xl text-xl font-bold text-white mb-6">Sign in to Skill Kwiz</h2>
 
                             <form className="space-y-4">
                                 <div>
@@ -83,7 +83,7 @@ export default function LoginSection() {
                                     />
                                 </div>
 
-                                <div className="flex items-center justify-between">
+                                <div className="flex md:flex-row flex-col items-center justify-between ">
                                     <label className="flex items-center text-white">
                                         <input type="checkbox" className="h-4 w-4 mr-2" />
                                         Remember me
@@ -92,10 +92,15 @@ export default function LoginSection() {
                                         Forget Password?
                                     </a>
                                 </div>
-
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#f73e5d] text-white p-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
+                                    className="w-full bg-[#8AA624] text-white p-3 rounded-md font-bold hover:bg-opacity-90 transition-all"
+                                >
+                                    Sign Up
+                                </button>
+                                <button
+                                    type="submit"
+                                    className="w-full bg-[#f73e5d] text-white p-3 rounded-md font-bold hover:bg-opacity-90 transition-all"
                                 >
                                     Sign In
                                 </button>
